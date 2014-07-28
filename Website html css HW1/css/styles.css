@@ -1,0 +1,14 @@
+img {
+  height: 200px;
+  width: 250px;
+}
+div {
+  border: 1px solid red;
+  width: 200px;
+}
+span {
+  background-color: blue;
+}
+div.div1 {
+  background-color: yellow;
+}
