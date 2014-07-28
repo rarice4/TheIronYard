@@ -44,23 +44,41 @@ class Game
       g
     end
     #########################
-  def create_horses
+    def create_horses
     puts "Name your trusty steed"
-    user_horse = gets.chomp
+    @user_horse = gets.chomp
     print "Get ready to race " 
-    print user_horse
+    print @user_horse
     puts "!!!!!!!!!!!"
 
     Horse.add_horse("pegasus", rand(1..6))
     Horse.add_horse("Unicorn", rand(1..6))
     Horse.add_horse("Dragon-Horse", rand(1..6))
-    Horse.add_horse(user_horse, rand(1..6))
-  end
+    Horse.add_horse(@user_horse, rand(1..6))
+    end
 ####################################
-  def arrays
+    def winner
+        if (@position_array_pegasus.reduce :+).to_i > 50 
+          puts "Pegasus WINS!"
+        end
+        if (@position_array_unicorn.reduce :+).to_i > 50
+          puts "Unicorn WINS!"
+        end
+        if (@position_array_dragon.reduce :+).to_i > 50
+          puts "Dragon-Horse WINS!"
+        end
+        if (@position_array_user.reduce :+).to_i > 50
+          print @user_horse
+          puts " WINS!"
+        end
+        abort
+
+
+
+    end
 
     
-  end
+  
 
   def first_turn
 
@@ -74,50 +92,91 @@ class Game
     @position_array_dragon.push Horse.display_horses[2].horse_stats[1].to_i
     @position_array_user.push Horse.display_horses[3].horse_stats[1].to_i
 
-    print @position_array_pegasus
-    print @position_array_unicorn
-    print @position_array_dragon 
-    print @position_array_user
+    puts "Press enter to go"
+    puts "Type 'headstart' to increase your odds of winning"
+    puts "GET READY TO RUMBLE.........GO GO GO!"
   
-    b = gets.chomp
+    # b = gets.chomp
     
   end
 
     def track
-      while (@position_array_user.reduce :+).to_i <= 50 && (@position_array_dragon.reduce :+).to_i <= 50 && (@position_array_unicorn.reduce :+).to_i && 50 && (@position_array_pegasus.reduce :+).to_i <= 50
+      while (@position_array_user.reduce :+).to_i <= 50 && (@position_array_dragon.reduce :+).to_i <= 50 && (@position_array_unicorn.reduce :+).to_i <= 50 && (@position_array_pegasus.reduce :+).to_i <= 50
 
       z = gets.chomp
-          if z == "f"
+          if z == ""
+            system('clear')
 
           @position_array_pegasus.push rand(1..8)
           @position_array_unicorn.push rand(1..8)
           @position_array_dragon.push rand(1..9)
           @position_array_user.push rand(2..9)
+            # elsif z == headstart
+            
 
+
+
+          print @position_array_pegasus.reduce :+
           (@position_array_pegasus.reduce :+).to_i.times do
             print "*"
           end
           puts "Pegasus"
+          
+          print @position_array_unicorn.reduce :+
           (@position_array_unicorn.reduce :+).to_i.times do
             print "*"
           end
           puts "Unicorn"
 
+          print @position_array_dragon.reduce :+
           (@position_array_dragon.reduce :+).to_i.times do
             print "*"
           end
           puts "Dragon-Horse"
+          
+          print @position_array_user.reduce :+
           (@position_array_user.reduce :+).to_i.times do
             print "*"
           end
-          puts "user_horse"
-
-
-           puts @position_array_pegasus.reduce :+
-           puts @position_array_unicorn.reduce :+
-           puts @position_array_dragon.reduce :+ 
-           puts @position_array_user.reduce :+
+          puts @user_horse
           end
+          
+            if z == "headstart"
+              system('clear')
+
+              @position_array_pegasus.push rand(1..8)
+              @position_array_unicorn.push rand(1..8)
+              @position_array_dragon.push rand(1..9)
+              @position_array_user.push rand(10..15)
+
+          print @position_array_pegasus.reduce :+
+          (@position_array_pegasus.reduce :+).to_i.times do
+            print "*"
+          end
+          puts "Pegasus"
+          
+          print @position_array_unicorn.reduce :+
+          (@position_array_unicorn.reduce :+).to_i.times do
+            print "*"
+          end
+          puts "Unicorn"
+
+          print @position_array_dragon.reduce :+
+          (@position_array_dragon.reduce :+).to_i.times do
+            print "*"
+          end
+          puts "Dragon-Horse"
+          
+          print @position_array_user.reduce :+
+          (@position_array_user.reduce :+).to_i.times do
+            print "*"
+          end
+          puts @user_horse
+          end
+            
+            
+     
+
      end
    end
 
@@ -128,6 +187,8 @@ a = Game.add_game(1, 2, 3)
 a.create_horses
 a.first_turn
 a.track
+a.winner
+puts "END GAME"
 
 
 
