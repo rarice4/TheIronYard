@@ -1,0 +1,19 @@
+
+<h3>Let's edit a Post!</h3>
+<a href="/">Back</a>
+
+
+<form action="/edit_contact/<%= @blog.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="date">Date</label>
+  <input type="text" id="date" name="contact[date]" value="<%= @blog.date %>">
+  <br>
+  <label for="title">Title</label>
+  <input type="text" id="title" name="contact[title]" value="<%= @blog.title %>">
+  <br>
+  <label for="Post">Post</label>
+  <br>
+  <textarea name="contact[post]" rows="10" cols="50"> <%= @blog.post %> </textarea>
+  <br>
+  <input type="submit" value="Edit Post">
+</form>

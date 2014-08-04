@@ -1,0 +1,11 @@
+<h1>
+  <%= @blog.date %>
+  </h1>
+  <h2><%= @blog.title %></h2>
+  <h4><%= @blog.post %></h4>
+  <form action="/delete_contact/<%= @blog.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
+
+  <a href="/">Back</a>

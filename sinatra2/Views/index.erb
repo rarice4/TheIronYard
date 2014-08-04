@@ -1,0 +1,16 @@
+<a href="/create_contact">Create Blog</a>
+<br>
+<% @blog.each do |blog| %>
+  <a href="/show_contact/<%= blog.id %>">
+    <%= blog.date %>
+    <br>
+    <%= blog.title%>
+    <br>
+    </a>
+    <%= blog.post %>
+    <br>
+  
+  <a href="/edit_contact/<%= blog.id %>" >Edit</a>
+  <br>
+  <br>
+<% end %>
