@@ -1,0 +1,13 @@
+<h1> Rob's Ruby on Rails Blog</h1>
+
+<%= link_to "New Post", new_blog_path %>
+<br>
+<% @blogs.each do |blog| %>
+
+  <%= link_to blog.title, blog_path(blog) %>
+  <%= link_to "Edit", edit_blog_path(blog) %>
+  <%= link_to "Delete", blog_path(blog), method: :delete %>
+  
+  <br>
+
+<% end %>
