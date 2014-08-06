@@ -1,0 +1,15 @@
+%h1 Show Patient
+First Name:
+%p= @patient.first_name 
+Last Name:
+%p=@patient.last_name
+DOB:
+%p= @patient.dob
+Status:
+%p= @patient.workflow_state
+Gender:
+%p= @patient.gender
+Description:
+%p= @patient.description
+%br
+%li= link_to "Back", root_path
