@@ -1,0 +1,8 @@
+%h1 Hospital Database
+= link_to "Hospitals", hospitals_path
+%ul
+  Hospitals
+  - @hospitals.each do |hospital|
+    %li
+      = hospital.name
+      

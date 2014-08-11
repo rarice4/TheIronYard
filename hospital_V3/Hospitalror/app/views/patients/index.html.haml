@@ -1,0 +1,18 @@
+%h1 Patient List
+= @hospital.name
+/ = link_to "Patients", hospitals_path
+%ul
+  =link_to "Add Patient", new_hospital_patient_path(@hospital)
+  Patients
+  - @patients.each do |patient|
+    %li
+      = patient.first_name
+      |
+      = patient.last_name
+      = link_to "Edit", edit_hospital_patient_path(@hospital, patient)
+      |
+      = link_to "Show", hospital_patient_path(@hospital, patient)
+      |
+      = link_to "delete", hospital_patient_path(@hospital, patient), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+      / hospital_patient_path(@hospital, patient)

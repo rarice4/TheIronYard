@@ -1,0 +1,24 @@
+%h1 Display Hospital Doctors
+
+= @hospital.name
+%br
+
+%br
+Doctors
+%br
+-@doctors.each do |f|
+  %li  
+    = f.content
+    |
+    = link_to "delete", delete_doctor_hospital_path(@hospital, @patient, doctor_id: f.id), method: :delete
+    %br
+%br
+= form_for @doctor, url: create_doctor_hospital_path(@hospital, @patient) do |f|
+  = f.label "Add New Doctor"
+  %br
+  = f.text_area :content
+  %br
+  = f.submit
+
+%br
+%li= link_to "Back", hospitals_path(@hospital)

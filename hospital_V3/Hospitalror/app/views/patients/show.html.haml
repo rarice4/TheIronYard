@@ -1,0 +1,36 @@
+%h1 Show Patient
+First Name:
+
+%p= @patient.first_name 
+Last Name:
+%p=@patient.last_name
+DOB:
+%p= @patient.dob
+Status:
+%p= @patient.workflow_state
+Gender:
+%p= @patient.gender
+Description:
+%p= @patient.description
+%br
+= link_to "Medication", hospital_patient_medications_path(@hospital, @patient)
+%br
+%br
+Doctors
+%br
+-@doctors.each do |f|
+  %li  
+    = f.content
+    |
+    = link_to "delete", delete_doctor_hospital_patient_path(@hospital, @patient, doctor_id: f.id), method: :delete
+    %br
+%br
+= form_for @doctor, url: create_doctor_hospital_patient_path(@hospital, @patient) do |f|
+  = f.label "Add New Doctor"
+  %br
+  = f.text_area :content
+  %br
+  = f.submit
+
+%br
+%li= link_to "Back", hospital_patients_path(@hospital)

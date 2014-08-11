@@ -1,0 +1,11 @@
+%h1 Create New Medication
+
+= form_for [@hospital, @patient, @medication] do |f|
+  %br/
+  = f.label :name
+  = f.text_field :name
+  %br/
+  = f.label :description
+  = f.text_field :description
+  %br/
+  = f.submit

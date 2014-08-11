@@ -1,0 +1,14 @@
+%h1 Show Medication
+=@patient.first_name
+|
+=@patient.last_name
+%br/
+%strong Medication:
+%br/
+=@medication.name
+%br/
+%strong Description:
+%br/
+=@medication.description
+%br/
+= link_to "Back", hospital_patient_medications_path

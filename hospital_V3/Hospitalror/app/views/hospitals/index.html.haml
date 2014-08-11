@@ -1,0 +1,11 @@
+%h1 Hospital Database
+= link_to "Create Hospital", new_hospital_path
+%ul
+  Hospitals
+  - @hospital.each do |hospital|
+    %li
+      = link_to hospital.name, hospital_patients_path(hospital)
+      |
+      = hospital.description
+      = link_to "Show Doctors", hospital_path(hospital)
+     
