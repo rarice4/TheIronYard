@@ -1,5 +1,5 @@
 class MedicationsController < ApplicationController
-
+before_action :authenticate_user!
 def index
   
   @hospital = Hospital.find params[:hospital_id]

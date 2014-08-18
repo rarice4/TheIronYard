@@ -6,4 +6,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    
+    .pull-right
+      = user_login_links    
+
+
+    %p.notice= notice if notice
+    %p.alert= alert if alert 
+
     = yield

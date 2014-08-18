@@ -1,11 +1,12 @@
 class PatientsController < ApplicationController
-
+before_action :authenticate_user!
 def index
   
   @hospital = Hospital.find params[:hospital_id]
   @patients = @hospital.patients
   @patient = @hospital.patients params[:id]
 end
+
 def show
   
   @hospital = Hospital.find params[:hospital_id]
