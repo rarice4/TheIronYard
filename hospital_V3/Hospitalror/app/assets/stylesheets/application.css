@@ -23,3 +23,6 @@ border: 2px solid yellow;
 p {border-bottom: 2px solid white;
 border-top: 2px solid white;
 }
+.message {color: red;
+font-size: 30px;
+}

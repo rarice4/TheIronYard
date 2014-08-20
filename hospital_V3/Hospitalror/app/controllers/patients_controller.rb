@@ -1,5 +1,14 @@
 class PatientsController < ApplicationController
 before_action :authenticate_user!
+
+def search_patients
+  @patients = Patient.where("first_name LIKE ?", "%#{params[:q]}%")
+  respond_to do |format|
+      format.js
+    end
+end
+
+
 def index
   
   @hospital = Hospital.find params[:hospital_id]

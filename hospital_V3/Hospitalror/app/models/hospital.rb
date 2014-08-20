@@ -1,4 +1,9 @@
 class Hospital < ActiveRecord::Base
+  validates :name, presence: true
   has_many :patients
   has_many :doctors, as: :doctorable
+
+
 end
+
+

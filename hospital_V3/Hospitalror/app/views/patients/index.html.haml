@@ -16,3 +16,10 @@
       = link_to "delete", hospital_patient_path(@hospital, patient), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
       / hospital_patient_path(@hospital, patient)
+
+%br
+%strong Enter First Name
+%br
+= text_field_tag '', '', class: "patients_search"
+= link_to "Search Patient", 'javascript:void(0);', class: "search_patients btn btn-lg btn-primary"
+%ul.search_list
