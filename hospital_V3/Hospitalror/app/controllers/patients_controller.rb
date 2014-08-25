@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
 before_action :authenticate_user!
 
 def search_patients
-  @patients = Patient.where("first_name LIKE ?", "%#{params[:q]}%")
+  @patients = Patient.where("last_name LIKE ?", "%#{params[:q]}%")
   respond_to do |format|
       format.js
     end

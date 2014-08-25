@@ -10,11 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require bootstrap
+ *= require bootstrap-theme
  */
 
-body {background-color: #d4f7ff;
+/*body {background-color: #d4f7ff;
 
 }
 h1 {font-style: italic;
@@ -22,7 +22,8 @@ border: 2px solid yellow;
 }
 p {border-bottom: 2px solid white;
 border-top: 2px solid white;
-}
+}*/
 .message {color: red;
 font-size: 30px;
 }
+

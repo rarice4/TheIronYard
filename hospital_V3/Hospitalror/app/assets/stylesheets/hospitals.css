@@ -1,0 +1,73 @@
+
+
+body {
+  padding-top: 50px;
+  background-color: steelblue;
+  /*background-image: url(/assets/muscheader.jpg) ;*/
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+h4 {
+  margin-top: 25px;
+}
+.row {
+  margin-bottom: 10px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #eee;
+  background-color: lightgreen;
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.zzz {margin-left: 33%;
+  margin-right: 33%;
+  margin-top: 50px;
+
+}
+.zcenter {margin-right: auto;
+  margin-left: auto;
+
+
+}
+
+h1 { margin: 20px ;
+  color:ivory;
+
+}
+
+.zbutton { color: ivory;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+
+}
+
+.customb {
+  background-image: url(/assets/muscheader.jpg);
+  width: 50%;
+  height: 50%;
+  margin-left:auto;
+  margin-right: auto;
+  background-size: cover;
+  border: 5px solid sandybrown;
+  border-radius: 25px
+  
+} 
+
+.mrgn {margin-top: 30px;}
+.centerz {background-color: #3d3d3d;
+border: 40px solid #3d3d3d;}

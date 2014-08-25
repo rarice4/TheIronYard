@@ -1,13 +1,30 @@
-%h1 Hospital Database
-= link_to "Create Hospital", new_hospital_path
-%ul
-  Hospitals
-  - @hospital.each do |hospital|
-    %li
-      = link_to hospital.name, hospital_patients_path(hospital)
-      |
-      = hospital.description
-      = link_to "Show Doctors", hospital_path(hospital)
-     
+/ = stylesheet_link_tag "/assets/hospitals.css"
+.centerz
+  .customb
+    .text-center
+      %h1 Hospital Database
+      .zbutton 
+        %div.xv &#9877; 
+      
 
-     
+.zcenter.text-center.mrgn
+  = link_to "Create Hospital", new_hospital_path, class: "btn btn-lg btn-info"     
+
+
+
+%div.zzz
+  .panel.panel-primary
+    .panel-heading
+      %h3.panel-title Hospitals
+    .panel-body
+      %ul
+      - @hospital.each do |hospital|
+      
+        .row
+          .col-md-4= link_to hospital.name, hospital_patients_path(hospital)
+            
+          .col-md-4= hospital.description
+            
+          .col-md-4= link_to "Show Doctors", hospital_path(hospital)
+
+

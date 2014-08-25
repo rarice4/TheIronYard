@@ -1,24 +1,40 @@
 %h1 Patient List
-= @hospital.name
+%strong= @hospital.name
 / = link_to "Patients", hospitals_path
-%ul
-  =link_to "Add Patient", new_hospital_patient_path(@hospital)
-  Patients
-  - @patients.each do |patient|
-    %li
-      = patient.first_name
-      |
-      = patient.last_name
-      = link_to "Edit", edit_hospital_patient_path(@hospital, patient)
-      |
-      = link_to "Show", hospital_patient_path(@hospital, patient)
-      |
-      = link_to "delete", hospital_patient_path(@hospital, patient), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-      / hospital_patient_path(@hospital, patient)
-
 %br
-%strong Enter First Name
+%br
+=link_to "Add Patient", new_hospital_patient_path(@hospital)
+%br
+%br
+%strong Patients
+- group_number_total = 0
+
+
+%div.zzz
+  .panel.panel-primary
+    .panel-heading
+      %h3.panel-title Patients
+    .panel-body
+      %ul
+        - @patients.all.each_slice(5) do |patient_group|
+          - group_number_total += 1
+          -patient_group.each do |patient|
+            %li{class: "#{'hidden' if group_number_total >=2} group_#{group_number_total} patient_list"}
+              = patient.first_name
+              |
+              = patient.last_name
+              = link_to "Edit", edit_hospital_patient_path(@hospital, patient)
+              |
+              = link_to "Show", hospital_patient_path(@hospital, patient)
+              |
+              = link_to "delete", hospital_patient_path(@hospital, patient), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+            / hospital_patient_path(@hospital, patient)
+      - group_number_total.times do |x|
+        = link_to x + 1, "javascript:void(0);", class: "new_page"
+        |
+%br
+%strong Enter Last Name
 %br
 = text_field_tag '', '', class: "patients_search"
 = link_to "Search Patient", 'javascript:void(0);', class: "search_patients btn btn-lg btn-primary"

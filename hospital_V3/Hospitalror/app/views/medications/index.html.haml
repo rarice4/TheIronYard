@@ -7,11 +7,13 @@
 
 - @medication.each do |medication| 
   %li
-    = medication.name
+    .row  
+
+      .col-md-4= medication.name
     
-    = link_to "Edit", edit_hospital_patient_medication_path(@hospital, @patient, medication)
-    |
-    = link_to "Show", hospital_patient_medication_path(@hospital, @patient, medication)
-    |
-    = link_to "delete", hospital_patient_medication_path(@hospital, @patient, medication), :method => :delete, :data => { :confirm => 'Are you sure?' }
+      .col-md-4= link_to "Edit", edit_hospital_patient_medication_path(@hospital, @patient, medication)
+    
+      .col-md-4= link_to "Show", hospital_patient_medication_path(@hospital, @patient, medication)
+    
+      .col-md-4= link_to "delete", hospital_patient_medication_path(@hospital, @patient, medication), :method => :delete, :data => { :confirm => 'Are you sure?' }
 

@@ -35,6 +35,15 @@ $(".search_patients").click( function() {
     })
   })
 
+$(".new_page").click(function() {
+    console.log("click")
+    var new_page = $(this).html()
+    console.log(new_page)
+    $(".patient_list").addClass("hidden")
+    $(".group_" + new_page).removeClass("hidden")
+
+  })
+
 
 
 })
