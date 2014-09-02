@@ -1,0 +1,129 @@
+
+.sizingc {width: 100%;
+height: 227px;
+position: absolute;
+}
+.outerc {width: 74.7%;
+margin-left: 10px;
+border: 7px solid white}
+.colspacing {margin-top: 12px;}
+
+.overlayz {z-index: 10;
+position: relative;
+margin-top: 34px;
+margin-left: 12px;
+width: 40%;
+}
+.cardim {height: 227px;}
+
+.dispinl {display: inline-block;
+width: 23.9%;
+margin-left: 10px;
+background-color: white;
+border-bottom: 3px solid gray;
+vertical-align: top;
+font-size: 12px
+}
+
+.colspacing2 {margin-top: 45px;}
+
+.headmarg{margin-left: 8%;
+  margin-right: 16px;
+
+}
+
+.datesmall {margin-left:6%;
+margin-top: 3%;
+margin-bottom: 3%;
+color: darkgray;
+}
+
+.scaleread {margin-left: 33%;
+  width: 33%;
+}
+
+.dispinl2 {display: inline-block;
+width: 47.4%;
+border: 3px solid white;
+
+}
+.reducestv {width: 98.3%;
+border: 3px solid white;
+margin-top: 1%;
+}
+.padding0 {padding: 0px;
+margin-left: 1.1%;
+}
+.paddingnone{padding: 0px;}
+.tomstyle {width: 96.3%;
+border:3px solid white;
+}
+
+.colsetting {width: 465px;
+height: 321px;
+}
+.marginzz{margin-right: 2%;}
+
+.mrz{margin-bottom: 5.5%}
+
+.overlay1 {z-index: 10;
+position: relative;
+margin-top: 11%;
+margin-left: 3%;
+width: 40%;
+}
+.positionz{position: absolute;}
+.marginrod {margin-left: 7%}
+.overlay2 {z-index: 10;
+position: relative;
+margin-top: 11%;
+margin-left: 14%;
+width: 32%;}
+
+.overlay3 {z-index: 10;
+position: relative;
+margin-top: 23%;
+margin-left: 20%;
+width: 64%;}
+
+.marginsteve {margin-top: 10%;
+}
+
+.overlay4 {z-index: 10;
+position: relative;
+margin-top: 58%;
+margin-left: 16%;
+width: 70%;}
+.colsetting2 {width: 230px;
+
+}
+
+.scrolldim {margin-left: 1%;
+height: 258px;
+width: 74.6%;}
+
+.backgroundw {background-color: white;
+margin-top: 2%;
+margin-left: 19.2%;
+margin-right: 24%}
+
+.contactm {margin-left: 3%;
+
+}
+.sizingcon {height: 235px;}
+
+.topmarg {height: 5px;}
+
+.backgroundwhite {background-color: white;
+margin-top: 1%;
+}
+.minbot {width: 26.8%;}
+.marginlft {margin-left: 19%;}
+
+input, textarea, select {
+  width : 97%;}
+
+.margintp {margin-top: 7%;}
+.sizelast {height: 215px;}
+
+.skatereduce{height: 224px;}

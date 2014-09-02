@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require bootstrap
+ *= require bootstrap-theme
+ *= require jquery.thumbnailScroller.css
+ *= require_tree .
+ *= require_self
+ */
+body {background-image: url(/assets/background.png);
+  font-family: gibson-regular;
+
+}
+.marginz {display: inline-block;
+margin-left: 1%;
+}
+.rowz {
+  margin-left: 400px;
+font-size: 0;
+padding-top: 10px;
+display: block;
+}
+.raisez{display: inline-block;
+color: white;
+font-size: 20px;
+margin-top: 5px;
+margin-left: 9px;
+
+}
+.inlinez{display: inline-block;}
+
+.scalez {height: 42px;
+width: 40px;
+}
+.appear {display: inline-block;
+color: white;
+font-size: 40px;
+margin-left: 9px;
+vertical-align: middle;
+font-family: -webkit-pictograph
+}
+.marg {margin: 3px;
+}
+
+.navrow {
+font-size: 0;
+margin-top: 10px;
+display: block;
+margin-left: 1px
+}
+
+.bardim {display: inline-block;
+  width: 165px;
+height: 30px;
+font-size: 14px;
+color: white;
+background-image: url(/assets/redbar.png);
+border-bottom: 3px solid rgb(192, 0, 0);
+border-bottom: 3px solid rgba(192, 192, 192, .2);
+-webkit-background-clip: padding-box; /* for Safari */
+background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.centertab { margin-left: auto;
+margin-right: auto;
+}
+
+.align {text-align: center;
+padding-top: 5px;
+font-size: 12px;
+
+}
+.dim {height: 70px;}
+
+@media all and (max-width: 723px) {
+  .rowz {
+    margin-left: 57%;
+  }
+}
+@media all and (max-width: 717px) {
+  .rowz {
+    margin-left: 228px;
+  }
+}
+
+@media all and (max-width: 551px) {
+  .rowz {
+    margin-left: 54px;
+  }
+}
+
+
+
+/*@media all and (max-width: 535px) {
+  .rowz {
+    margin-left: 25%;
+  }
+}*/
+
+
+
+}
