@@ -44,3 +44,11 @@ gem 'workflow'
 # gem 'debugger', group: [:development, :test]
 gem 'quiet_assets'
 gem 'devise'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem "factory_girl_rails", "~> 4.0"
+end

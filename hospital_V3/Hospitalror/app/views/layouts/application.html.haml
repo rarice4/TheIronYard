@@ -5,22 +5,8 @@
     = stylesheet_link_tag    'application', params[:controller], media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %body
-    
-    .pull-right
-      = user_login_links    
-
-
-    %p.notice= notice if notice
-    %p.alert= alert if alert 
-
-    = yield
-
-%html{:lang => "en"}
-  %head
-  
     %link{:href => "../../favicon.ico", :rel => "icon"}
-    %title Starter Template for Bootstrap
+    
     / Bootstrap core CSS
     %link{:href => "../../dist/css/bootstrap.min.css", :rel => "stylesheet"}
     / Custom styles for this template
@@ -44,20 +30,21 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{:href => "#"} Med Data
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav
+        .collapse.navbar-collapse.marginlft
+          %ul.nav.navbar-nav.marginacross
             %li.active
-              %a{:href => "#"} Home
+              %a{:href => root_path} Home
             %li
-              %a{:href => "#about"} About
+              %a{:href => hospitals_path} Hospitals
+            %li.textmrg
+              = user_account_edit
             %li
-              %a{:href => "#contact"} Contact
-        / /.nav-collapse
+              = user_account_logout
+
+
+
+    = yield
+    %p.notice= notice if notice
+    %p.alert= alert if alert 
   
-    
-    / /.container
-    /
-      Bootstrap core JavaScript
-      \==================================================
-    / Placed at the end of the document so the pages load faster
    
