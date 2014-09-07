@@ -1,0 +1,9 @@
+body {
+  padding-top: 0px;
+  background-color: steelblue;
+  /*background-image: url(/assets/muscheader.jpg) ;*/
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}

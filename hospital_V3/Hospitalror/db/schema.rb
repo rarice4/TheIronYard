@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140818204408) do
 
-  create_table "comments", force: true do |t|
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "commentable_type"
-    t.integer  "commentable_id"
-  end
-
   create_table "doctors", force: true do |t|
     t.text     "content"
     t.datetime "created_at"
@@ -30,10 +22,10 @@ ActiveRecord::Schema.define(version: 20140818204408) do
   end
 
   create_table "hospitals", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "name"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "medications", force: true do |t|
@@ -73,10 +65,5 @@ ActiveRecord::Schema.define(version: 20140818204408) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "welcomes", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
 end

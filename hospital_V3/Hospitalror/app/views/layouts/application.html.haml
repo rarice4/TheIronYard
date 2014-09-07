@@ -3,6 +3,7 @@
   %head
     %title Hospitalror
     = stylesheet_link_tag    'application', params[:controller], media: 'all'
+    = stylesheet_link_tag 'custom.css'
     = javascript_include_tag 'application'
     = csrf_meta_tags
     %link{:href => "../../favicon.ico", :rel => "icon"}
@@ -42,9 +43,10 @@
               = user_account_logout
 
 
-
-    = yield
-    %p.notice= notice if notice
-    %p.alert= alert if alert 
+    .container
+      .starter-template
+        = yield
+        %p.notice= notice if notice
+        %p.alert= alert if alert 
   
    

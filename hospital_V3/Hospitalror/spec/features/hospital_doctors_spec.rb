@@ -10,8 +10,7 @@ describe "Ceate Patient", type: :feature, js: true do
     fill_in "Password", with: "12345678"
     click_button "Log in"
     click_link "Hospitals"
-    click_link "MUSC"
-    click_link "Add Patient"
+    click_link "Show Doctors"
+    expect(page).to have_content("Doctors")
   end
 end
-  

@@ -1,15 +1,5 @@
 
 
-body {
-  padding-top: 50px;
-  background-color: steelblue;
-  /*background-image: url(/assets/muscheader.jpg) ;*/
-}
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
-}
-
 h4 {
   margin-top: 25px;
 }
@@ -71,3 +61,4 @@ h1 { margin: 20px ;
 .mrgn {margin-top: 30px;}
 .centerz {background-color: #3d3d3d;
 border: 40px solid #3d3d3d;}
+

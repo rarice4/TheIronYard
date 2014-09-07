@@ -1,7 +1,7 @@
 class HospitalsController < ApplicationController
 before_action :authenticate_user!
 def index
-  @hospital = Hospital.all
+  @hospitals = Hospital.all
 
 end
 
@@ -20,7 +20,16 @@ end
 
 def create
   @hospital = Hospital.create hospital_params
-  redirect_to hospitals_path
+  if @hospital.save
+    redirect_to hospitals_path
+  else
+    render :new
+  end
+
+end
+
+def edit
+  @hospital = Hospital.find params[:id]
 end
 
 
