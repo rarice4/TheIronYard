@@ -1,5 +1,6 @@
 class HospitalsController < ApplicationController
 before_action :authenticate_user!
+respond_to :json, :html
 def index
   @hospitals = Hospital.all
 
@@ -61,7 +62,7 @@ def create_doctor
 
 private
 def hospital_params
-  params.require(:hospital).permit(:name, :description)
+  params.require(:hospital).permit(:name, :description, :address)
 end
  def patient_params
     params.require(:patient).permit(:first_name, :last_name, :dob, :description, :gender, :workflow_state, :hospital_id)
