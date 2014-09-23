@@ -1,0 +1,38 @@
+%div{ ng: {controller: "IndexCtrl"}}
+  %h1
+    {{ title }}
+  %div 
+    
+  .calcbody
+    .thinborder
+      %p.output{:name => "output"}
+        {{output}}
+        %br 
+        {{operationToken}}
+
+  %div
+    %button.0{:name => "btn0", ng: {click: "updateOutput(0)"}, :value => 0} 0
+    %button.1{:name => "btn1", ng: {click: "updateOutput(1)"}, :value => 1} 1
+    %button.2{:name => "btn2", ng: {click: "updateOutput(2)"}, :value => 2} 2
+    %button.3{:name => "btn3", ng: {click: "updateOutput(3)"}, :value => 3} 3
+    %button.4{:name => "btn4", ng: {click: "updateOutput(4)"}, :value => 4} 4
+    %button.5{:name => "btn5", ng: {click: "updateOutput(5)"}, :value => 5} 5
+    %button.6{:name => "btn6", ng: {click: "updateOutput(6)"}, :value => 6} 6
+    %button.7{:name => "btn7" ,ng: {click: "updateOutput(7)"}, :value => 7} 7
+    %button.8{:name => "btn8", ng: {click: "updateOutput(8)"}, :value => 8} 8
+    %button.9{:name => "btn9", ng: {click: "updateOutput(9)"}, :value => 9} 9
+    %button.operationbutton{:name => "btnMinus", "ng-click" => "subtract()"} -
+    %button.operationbutton{:name => "btnPlus", "ng-click" => "add()"} +
+    %button.operationbutton{:name => "btnEquals", "ng-click" => "calculate()"} =
+    %button.clearbutton{:name => "btnClear", "ng-click" => "clear()"} CLEAR
+
+  %p
+    pendingOperation: {{pendingOperation}}
+    %br
+    lastOperation: {{lastOperation}}
+    %br
+    runningTotal: {{runningTotal}}
+    %br
+    pendingValue: {{pendingValue}}
+    %br 
+    newNumber: {{newNumber}}
