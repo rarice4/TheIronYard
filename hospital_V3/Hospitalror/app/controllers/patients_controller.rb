@@ -47,8 +47,9 @@ def create
 end
 
 def edit
-  @patient = Patient.find params[:id]
+   # Patient.find params[:id]
   @hospital = Hospital.find params[:hospital_id]
+  @patient = @hospital.patients.find params[:id]
 end
 
   def update
