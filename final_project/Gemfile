@@ -30,6 +30,7 @@ gem 'html2haml'
 gem 'quiet_assets'
 gem 'devise'
 gem 'geocoder'
+gem 'will_paginate', '~> 3.0'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shoulda-matchers'

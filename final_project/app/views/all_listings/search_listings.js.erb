@@ -1,0 +1,4 @@
+$("ul.search_list").html("")
+<% @listings.each do |listing| %>
+  $("ul.search_list").append("<%= escape_javascript(render('all_listings/listings_partial', a_listing: listing )) %>")
+<% end %>
