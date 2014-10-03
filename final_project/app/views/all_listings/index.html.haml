@@ -1,27 +1,9 @@
 %h1.col-xs-8.col-xs-offset-4 Lisitings
-=form_tag all_listings_path, :method => 'get' do
-  = hidden_field_tag :direction, params[:direction]
-  = hidden_field_tag :sort, params[:sort]
+%div{:id => "listing_search"}
+  =form_tag all_listings_path, :method => 'get' do
+    = hidden_field_tag :direction, params[:direction]
+    = hidden_field_tag :sort, params[:sort]
   %div
     = text_field_tag '', '', class: "listings_search"
     = link_to "Search Listing", 'javascript:void(0);', class: "search_listings btn btn-lg btn-primary"
-
-%table.centertable
-  %tr
-    %th Sort by: 
-    %th.tblstyl= sortable "rent", "Rent"
-    %th.tblstyl= sortable "lease_start", "Start Date"
-    %th.tblstyl= sortable "lease_length", "Length of Lease"
-    %th.tblstyl= sortable "lease_type", "Type"
-%ul.search_list
-- @listings.each do |f|
-  %li.col-xs-6.col-xs-offset-3.borderbottom
-    $
-    = f.rent
-    = f.address
-    = f.city 
-    = f.state
-    = f.lease_type
-  .col-xs-3
-= will_paginate @listings
-
+%div{:id => "table_list"}= render 'listings_table'

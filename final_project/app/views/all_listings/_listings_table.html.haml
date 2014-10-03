@@ -1,0 +1,19 @@
+%table.centertable.hidetable
+  %tr
+    %th Sort by: 
+    %th.tblstyl= sortable "rent", "Rent"
+    %th.tblstyl= sortable "lease_start", "Start Date"
+    %th.tblstyl= sortable "lease_length", "Length of Lease"
+    %th.tblstyl= sortable "lease_type", "Type"
+%ul.search_list
+  - @listings.each do |f|
+    %li.col-xs-6.col-xs-offset-3.borderbottom
+      $
+      = f.rent
+      = f.address
+      = f.city 
+      = f.state
+      = f.lease_type
+    .col-xs-3
+%div{:id => "table_pagination"}= will_paginate @listings
+

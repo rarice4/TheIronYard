@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap.min.js
 //= require_tree .
+$(function () {
+  $('#table_list th a').live('click', function () {
+    $.getScript(this.href);
+    return false;
+  });
+  $('#listing_search').submit(function () {
+    $.get(this.action, $(this).serialize(), null, 'script');
+    return false;
+  });
+})
