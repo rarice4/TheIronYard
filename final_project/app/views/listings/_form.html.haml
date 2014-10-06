@@ -1,5 +1,5 @@
 .col-xs-6.col-xs-offset-3
-  = form_for @listing do |f|
+  = form_for @listing, :html => { :multipart => true } do |f|
     =f.label :address
     %br
     =f.text_field :address
@@ -53,5 +53,9 @@
     %br
     =f.text_field :phone, {:maxlength => 10, :placeholder => 5555555555}
     %br
+    = f.file_field :photo
+    %br
     =f.submit "Submit"
+
+  
 

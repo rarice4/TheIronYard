@@ -43,3 +43,6 @@ margin-right: auto;}
 .borderbottom {border-bottom: 1px solid grey;
 padding: 1%;
 }
+.center_pagination {text-align: center;}
+.size_image {height: 300px;}
+.size_image_table {height:100px;}
