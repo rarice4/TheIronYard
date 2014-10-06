@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'all_listings' => 'all_listings#index'
   get '/search_listings' => 'all_listings#search_listings'
+  resources :searches
 
 
   # The priority is based upon order of creation: first created -> highest priority.

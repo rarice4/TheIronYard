@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926160807) do
+ActiveRecord::Schema.define(version: 20141005185404) do
 
   create_table "listings", force: true do |t|
     t.integer  "user_id"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20140926160807) do
     t.string   "phone"
     t.integer  "rent"
     t.integer  "zipcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", force: true do |t|
+    t.string   "keywords"
+    t.string   "category_id"
+    t.float    "minimum_price", limit: 24
+    t.float    "maximum_price", limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
   end
