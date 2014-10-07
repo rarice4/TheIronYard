@@ -1,9 +1,41 @@
-%h1.col-xs-8.col-xs-offset-4 Lisitings
-%div{:id => "listing_search"}
-  =form_tag all_listings_path, :method => 'get' do
-    = hidden_field_tag :direction, params[:direction]
-    = hidden_field_tag :sort, params[:sort]
-  %div
-    = text_field_tag '', '', class: "listings_search"
-    = link_to "Search Listing", 'javascript:void(0);', class: "search_listings btn btn-lg btn-primary"
-%div{:id => "table_list"}= render 'listings_table'
+:javascript
+  $(document).on('click', '#menu-toggle', function(e) {
+    console.log("Hi ")
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+  });
+#wrapper
+  / Sidebar
+  #sidebar-wrapper
+    %ul.sidebar-nav
+      %li.sidebar-brand
+        %a{:href => "#"}
+          Start Bootstrap
+      %li
+        %a{:href => "#"} Dashboard
+      %li
+        %a{:href => "#"} Shortcuts
+      %li
+        %a{:href => "#"} Overview
+      %li
+        %a{:href => "#"} Events
+      %li
+        %a{:href => "#"} About
+      %li
+        %a{:href => "#"} Services
+      %li
+        %a{:href => "#"} Contact
+  / /#sidebar-wrapper
+#page-content-wrapper
+  %a#menu-toggle.btn.btn-default{:href => 'javascript:void(0);'} Toggle Menu
+  %img.col-xs-8.col-xs-offset-4.sizesub_medium{:src => "/assets/subleasy.png"}
+  .col-xs-6.col-xs-offset-3
+    %div{:id => "listing_search"}
+      =form_tag all_listings_path, :method => 'get' do
+        = hidden_field_tag :direction, params[:direction]
+        = hidden_field_tag :sort, params[:sort]
+      %div
+        = text_field_tag '', '', class: "listings_search searchbar_sizing"
+        = link_to "Search", 'javascript:void(0);', class: "search_listings btn btn-sm btn-primary search_button"
+  .col-xs-3
+  %div{:id => "table_list"}= render 'listings_table'

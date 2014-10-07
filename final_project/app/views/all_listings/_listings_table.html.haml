@@ -21,6 +21,7 @@
   .panel.panel-default
     .panel-heading
       %i.fa.fa-bell.fa-fw
+      %div.append_t
       %table.centertable.hidetable
         %tr
           %th Sort by: 
@@ -29,22 +30,37 @@
           %th.tblstyl= sortable "lease_length", "Length of Lease"
           %th.tblstyl= sortable "lease_type", "Type"
     / /.panel-heading
-    %ul.search_list
-    .panel-body.hidetable
+    
+    .panel-body
       .list-group
-        - @listings.each do |f|
-          %a.list-group-item{:href => "#"}
-            %i.fa.fa-comment.fa-fw
-              = image_tag f.photo.url, :class => "size_image_table"
-
-              $
-              = f.rent
-              = f.address
-              = f.city 
-              = f.state
-              = f.lease_type
-          %span.pull-right.text-muted.small
-            %em 4 minutes ago
+        %div.search_list
+        .hidetable
+          - @listings.each do |f|
+            %a.list-group-item{:href => "#"}
+              %i.fa.fa-comment.fa-fw
+                .photo_display
+                  = image_tag f.photo.url, :class => "size_image_table"
+                %div.item_display
+                  $
+                  = f.rent
+                  %br
+                  Starts:
+                  %br
+                  = f.lease_start
+                  %br
+                  Months:
+                  %br
+                  =f.lease_length
+                %div.address_display
+                  = f.address
+                  %br
+                  = f.city
+                  , 
+                  = f.state
+                %div.type_display
+                  = f.lease_type
+            %span.pull-right.text-muted.small
+              %em 4 minutes ago
         
       %div.center_pagination{:id => "table_pagination"}= will_paginate @listings
       

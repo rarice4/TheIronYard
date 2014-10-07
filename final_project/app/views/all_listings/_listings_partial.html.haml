@@ -1,8 +1,10 @@
-%li.col-xs-6.col-xs-offset-3.borderbottom
-  $
-  = a_listing.rent
-  = a_listing.address
-  = a_listing.city 
-  = a_listing.state
-  = a_listing.lease_type
-.col-xs-3
+
+%a.list-group-item{:href => "#"}
+  %i.fa.fa-comment.fa-fw
+    = image_tag a_listing.photo.url, :class => "size_image_table"
+    $
+    = a_listing.rent
+    = a_listing.address
+    = a_listing.city 
+    = a_listing.state
+    = a_listing.lease_type
