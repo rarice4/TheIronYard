@@ -17,8 +17,9 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
+          %a#menu-toggle.navbar-brand{:href => 'javascript:void(0);', :class => 'glyphicon glyphicon-th-list'}
           %a.navbar-brand{:href => "#page-top"} Sub-Searcher
-          %a#menu-toggle{:href => 'javascript:void(0);', :class => 'glyphicon glyphicon-th-list'} Toggle Menu
+
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
@@ -31,5 +32,30 @@
             %li.page-scroll
               %a{:href => new_user_session_path} Login
 
-     
+    :javascript
+      $(document).on('click', '#menu-toggle', function(e) {
+        console.log("Hi ")
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+    #wrapper
+      / Sidebar
+      #sidebar-wrapper
+        %ul.sidebar-nav
+          %li.sidebar-brand
+            %a{:href => all_listings_path}
+              Main
+          %li
+            %a{:href => new_search_path} Advanced Search
+          %li
+            %a{:href => new_listing_path} Create Listings
+          %li
+            %a{:href => "#"} My Listings
+          %li
+            %a{:href => "#"} Services
+          %li
+            %a{:href => "#"} Contact
+          %li
+            %img.sizesub_small{:src => "/assets/subleasynotxt.png"}
+      / /#sidebar-wrapper       
     = yield

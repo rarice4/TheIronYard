@@ -49,6 +49,10 @@ padding: 1%;
 
 .sizesub_medium {height: 100px;
 width: 234px;}
+
+.sizesub_small {height: 50px;
+width: 116px;
+}
 .searchbar_sizing {width: 67%;}
 .search_button {margin: auto;
 width: 32%;}

@@ -1,33 +1,5 @@
-:javascript
-  $(document).on('click', '#menu-toggle', function(e) {
-    console.log("Hi ")
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-  });
-#wrapper
-  / Sidebar
-  #sidebar-wrapper
-    %ul.sidebar-nav
-      %li.sidebar-brand
-        %a{:href => "#"}
-          Start Bootstrap
-      %li
-        %a{:href => "#"} Dashboard
-      %li
-        %a{:href => "#"} Shortcuts
-      %li
-        %a{:href => "#"} Overview
-      %li
-        %a{:href => "#"} Events
-      %li
-        %a{:href => "#"} About
-      %li
-        %a{:href => "#"} Services
-      %li
-        %a{:href => "#"} Contact
-  / /#sidebar-wrapper
+
 #page-content-wrapper
-  %a#menu-toggle.btn.btn-default{:href => 'javascript:void(0);'} Toggle Menu
   %img.col-xs-8.col-xs-offset-4.sizesub_medium{:src => "/assets/subleasy.png"}
   .col-xs-6.col-xs-offset-3
     %div{:id => "listing_search"}
