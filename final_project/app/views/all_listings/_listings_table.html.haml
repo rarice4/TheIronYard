@@ -16,6 +16,7 @@
 /       = f.lease_type
 /     .col-xs-3
 / %div{:id => "table_pagination"}= will_paginate @listings
+
 .col-xs-6.col-xs-offset-3
   .panel.panel-default
     .panel-heading
@@ -28,7 +29,8 @@
           %th.tblstyl= sortable "lease_length", "Length of Lease"
           %th.tblstyl= sortable "lease_type", "Type"
     / /.panel-heading
-    .panel-body
+    %ul.search_list
+    .panel-body.hidetable
       .list-group
         - @listings.each do |f|
           %a.list-group-item{:href => "#"}
