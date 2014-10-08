@@ -13,5 +13,6 @@ def find_listings
   listings = listings.where("listings.rent <= ?", maximum_price ) if maximum_price.present?
   listings
 end
+
 end
 

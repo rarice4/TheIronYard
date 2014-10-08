@@ -4,6 +4,7 @@ class SearchesController < ApplicationController
   end
   def show
     @search = Search.find(params[:id])
+
   end
 
   def create

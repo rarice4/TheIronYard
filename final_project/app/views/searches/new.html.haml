@@ -1,19 +1,27 @@
-.col-xs-4.col-xs-offset-4  
-  = form_for @search do |f|
-    %p
-      = f.label :keywords
-      %br/
-      = f.text_field :keywords
-    %p
-      = f.label :category_id
-      %br/
-      = f.select(:category_id, options_for_select([[:address, :address], [:zipcode, :zipcode], [:city, :city], [:state, :state], [:lease_start, :lease_start], [:lease_length, :lease_length], [:lease_type, :lease_type], [:rooms, :rooms]])) 
-    %p
-      Price Range
-      %br/
-      = f.text_field :minimum_price, :size => 7
-      \-
-      \#{f.text_field :maximum_price, :size => 7}
-    %p= f.submit "Submit"
-.col-xs-4
+
+.col-xs-offset-2.underwater
+  .col-xs-4.col-xs-offset-4
+    %img.sizesub_form{:src => "/assets/subleasy.png" }  
+  .col-xs-4
+  .col-xs-4.col-xs-offset-4
+    %h5 Advanced Search
+  .col-xs-4
+  .col-xs-4.col-xs-offset-4  
+    = form_for @search do |f|
+      %p.form_inline
+        = f.label :keywords
+        %br/
+        = f.text_field :keywords
+      %p.form_inline
+        = f.label :category_id
+        %br/
+        = f.select(:category_id, options_for_select([[:address, :address], [:zipcode, :zipcode], [:city, :city], [:state, :state], [:lease_start, :lease_start], [:lease_length, :lease_length], [:lease_type, :lease_type], [:rooms, :rooms]])) 
+      %p
+        Price Range
+        %br/
+        = f.text_field :minimum_price, :size => 7
+        \-
+        \#{f.text_field :maximum_price, :size => 7}
+      %p= f.submit "Submit", :class => "btn btn-primary button_size"
+  .col-xs-4
 
