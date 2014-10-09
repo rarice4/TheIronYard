@@ -32,6 +32,12 @@ gem 'devise'
 gem 'geocoder'
 gem 'will_paginate', '~> 3.0'
 gem "paperclip", "~> 4.2"
+gem "paperclip-dropbox", ">= 1.1.7"
+gem 'figaro'
+
+# gem 'pg', group: :production
+# gem 'rails_12factor', group: :production
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shoulda-matchers'

@@ -220,3 +220,9 @@ max-height: 100%;
 
 .search_bar {padding-left: 1%;
 padding-right: 0%;}
+
+.bkgwhite {background-color: white;
+height: 33px;
+}
+
+.txtover {margin-left: 1%;}
