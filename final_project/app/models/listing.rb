@@ -8,4 +8,5 @@ class Listing < ActiveRecord::Base
                               user_id: ENV['USER_ID'],
                               access_type: 'app_folder'}
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  belongs_to :user
 end

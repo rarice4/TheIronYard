@@ -20,14 +20,15 @@ class ListingsController < ApplicationController
   end 
 
   def edit
-    @user = User.find params[:user_id]
-    @lisiting = @user.listings.find params[:id]
+    
+    @listing = Listing.find params[:id]
   end
 
   def update
-    @lisiting = Listing.find params[:id]
+    @listing = Listing.find params[:id]
     if @listing.update_attributes listing_params
       flash[:notice] = "Listing Updated"
+      redirect_to all_listings_path
     else
       render :edit
     end
