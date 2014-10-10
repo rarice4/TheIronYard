@@ -6,8 +6,10 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body#page-top.index.bkgcolor
-    %div.notice= notice
-    %div.alert= alert
+    %div.notice
+    %div.alert
+    / %div.notice= notice
+    / %div.alert= alert
     %nav.navbar.navbar-default.navbar-fixed-top.zdex
       .container
         / Brand and toggle get grouped for better mobile display
@@ -28,9 +30,9 @@
             %li.page-scroll
               %a{:href => "#about"} About
             %li.page-scroll
-              %a{:href => new_user_registration_path} Sign up
+              = user_login_links
             %li.page-scroll
-              %a{:href => new_user_session_path} Login
+              / %a{:href => new_user_session_path} Login
 
     :javascript
       $(document).on('click', '#menu-toggle', function(e) {
