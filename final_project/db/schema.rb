@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006224843) do
+ActiveRecord::Schema.define(version: 20141010035308) do
 
   create_table "listings", force: true do |t|
     t.integer  "user_id"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20141006224843) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.float    "latitude",           limit: 24
+    t.float    "longitude",          limit: 24
   end
 
   create_table "searches", force: true do |t|

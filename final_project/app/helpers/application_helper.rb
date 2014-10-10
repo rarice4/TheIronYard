@@ -14,6 +14,8 @@ module ApplicationHelper
     else
       link_to "Log In", new_user_session_path
     end
-end
+  end
+
+
 
 end

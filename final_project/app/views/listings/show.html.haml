@@ -60,6 +60,12 @@
           
   .col-xs-4
 
+  - markers = "#{@listing.latitude}%2C#{@listing.longitude}&"
+
+  .col-sm-5.col-xs-10.col-xs-offset-1.col-sm-offset-4
+    .google-maps
+      %iframe{:frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed/v1/place?q=#{markers}&key=AIzaSyAQnuVfqaXy-1fiSaAYXDi2Wh39lanrHv4", :style => "border:0", :width => "600"}
+
 
 
 

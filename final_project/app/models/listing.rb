@@ -9,4 +9,10 @@ class Listing < ActiveRecord::Base
                               access_type: 'app_folder'}
   validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   belongs_to :user
+  geocoded_by :full_street_address  
+  after_validation :geocode
+  
+  def full_street_address
+    [address, city, state].compact.join(', ')
+  end  
 end
