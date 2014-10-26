@@ -46,9 +46,11 @@ Doctors
   %br
   = f.submit
 
-%br
-%li= link_to "Edit Patient", edit_hospital_patient_path(@hospital, @patient)
-%br
-%li= link_to "Delete", hospital_patient_path(@hospital, @patient), :method => :delete, :data => { :confirm => 'Are you sure?' }
-%br
-%li= link_to "Back", hospital_patients_path(@hospital)
+.row
+  |
+  = link_to "Edit Patient", edit_hospital_patient_path(@hospital, @patient)
+  |
+  = link_to "Delete", hospital_patient_path(@hospital, @patient), :method => :delete, :data => { :confirm => 'Are you sure?' }
+  |
+  = link_to "Back", hospital_patients_path(@hospital)
+  |

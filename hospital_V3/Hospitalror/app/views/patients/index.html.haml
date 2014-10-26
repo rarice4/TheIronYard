@@ -3,7 +3,7 @@
 / = link_to "Patients", hospitals_path
 %br
 %br
-=link_to "Add Patient", new_hospital_patient_path(@hospital), id: "addpatient"
+=link_to "Add Patient", new_hospital_patient_path(@hospital), id: "addpatient", class: "btn btn-info"
 %br
 %br
 
@@ -20,22 +20,26 @@
           - group_number_total += 1
           -patient_group.each do |patient|
             %li{class: "#{'hidden' if group_number_total >=2} group_#{group_number_total} patient_list"}
+              |
               = patient.first_name
               |
               = patient.last_name
+              |
               = link_to "Edit", edit_hospital_patient_path(@hospital, patient)
               |
               = link_to "Show", hospital_patient_path(@hospital, patient)
               |
               = link_to "delete", hospital_patient_path(@hospital, patient), :method => :delete, :data => { :confirm => 'Are you sure?' }
+              |
 
             / hospital_patient_path(@hospital, patient)
       - group_number_total.times do |x|
         = link_to x + 1, "javascript:void(0);", class: "new_page"
         |
 %br
-%strong Enter Last Name
+%h4 Enter Last Name
 %br
 = text_field_tag '', '', class: "patients_search"
-= link_to "Search Patient", 'javascript:void(0);', class: "search_patients btn btn-lg btn-primary"
+= link_to "Search Patient", 'javascript:void(0);', class: "search_patients btn btn-lg btn-warning"
+
 %ul.search_list

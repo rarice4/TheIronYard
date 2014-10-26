@@ -1,7 +1,10 @@
-%li
-  = a_patient.first_name
-  |
-  = a_patient.last_name
-  |
-  / = bens_car.dealership
-  = link_to 'Show', hospital_patient_path(a_patient.hospital, a_patient)
+.panel-body
+  %li
+    |
+    = a_patient.first_name
+    |
+    = a_patient.last_name
+    |
+    / = bens_car.dealership
+    = link_to 'Show', hospital_patient_path(a_patient.hospital, a_patient)
+    |

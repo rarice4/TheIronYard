@@ -1,17 +1,19 @@
-%h1 Display Hospital Doctors
+%h1 Hospital Doctors
 
 = @hospital.name
 %br
-
-%br
-Doctors
-%br
--@doctors.each do |f|
-  %li  
-    = f.content
-    |
-    = link_to "delete", delete_doctor_hospital_path(@hospital, @patient, doctor_id: f.id), method: :delete
-    %br
+%div.zzz
+  .panel.panel-primary
+    .panel-heading
+      %h3.panel-title Doctors
+    .panel-body
+      %ul
+        -@doctors.each do |f|
+          .col-xs-4.col-xs-offset-4  
+            = f.content
+            |
+            = link_to "delete", delete_doctor_hospital_path(@hospital, @patient, doctor_id: f.id), method: :delete
+            %br
 %br
 = form_for @doctor, url: create_doctor_hospital_path(@hospital, @patient) do |f|
   = f.label "Add New Doctor"
