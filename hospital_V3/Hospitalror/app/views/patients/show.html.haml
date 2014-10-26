@@ -1,19 +1,33 @@
-%h1 Show Patient
-First Name:
-
-%p= @patient.first_name 
-Last Name:
-%p=@patient.last_name
-DOB:
-%p= @patient.dob
-Status:
-%p= @patient.workflow_state
-Gender:
-%p= @patient.gender
-Description:
-%p= @patient.description
-%br
-= link_to "Medication", hospital_patient_medications_path(@hospital, @patient)
+%h1
+  = @patient.first_name 
+  = @patient.last_name
+%div.zzz
+  .panel.panel-primary
+    .panel-heading
+      %h3.panel-title Hospitals
+    .panel-body
+      .row
+        .col-md-3 
+          First Name: 
+          = @patient.first_name 
+        .col-md-3 
+          Last Name:
+          =@patient.last_name
+        .col-md-3
+          DOB:
+          = @patient.dob
+        .col-md-3
+          Status:
+          %p= @patient.workflow_state
+        .col-md-3
+          Gender:
+          %p= @patient.gender
+        .col-md-3
+          Description:
+          %p= @patient.description
+          %br
+        .col-md-3
+          = link_to "Medication", hospital_patient_medications_path(@hospital, @patient)
 %br
 %br
 Doctors
